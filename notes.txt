@@ -1,0 +1,145 @@
+Hi Nick and Andy, 
+This project is v much at an early stage, but this was the initial inspiration: https://graphics.reuters.com/INDIA-RIVER/010081TW39P/index.html
+
+Relevant background/inspo:
+https://theconversation.com/a-birds-eye-view-of-new-zealands-changing-glaciers-97074
+https://theconversation.com/how-climate-change-made-the-melting-of-new-zealands-glaciers-10-times-more-likely-143626
+https://vimeo.com/119312940 
+From speaking to 3x glacier scientists, this is what I believe is doable (ie all the data is available on file):
+
+1) visualisation showing decrease in glaciers from 1970s to 2020s (poss with stopover of 2000 and/or 2010, if interesting) - point person: Lauren Vargo, Victoria University
+2) visualisation of 3-5 specific glaciers showing retreat over time: Franz Josef, Fox, Tasman, Brewster (given in the Google drive as an example), poss one more - point person: Lauren Vargo, Victoria University and Drew Colley of Niwa 
+3) visualisation showing projected retreat under climate change scenarios (images not given in Google drive as diff contact) - point person: Brian Anderson, Victoria University
+
+There are more possibilities we can explore eg thermal imaging and "wrapping" Google Earth topography but the above at least are possible. The idea is that these would go around a written piece that I have reported about climate change impact on glaciers & the toll it will have on the communities around them as well as for NZ ecosystems etc.
+
+This is what I've been supplied with thus far from Lauren the researcher: https://drive.google.com/drive/folders/1NTO8VvBbKcGS_IOS2iKzTTrUmLV6_alC?usp=sharing
+She says: Here's a folder starting to collate the data for you to share with the data vis team. Right now it has the glacier inventories, example images we have of Brewster Glacier, and a text file that gives a bit more context.
+
+At a very early stage rn but let me know what you need from me - Lauren in particular very happy to liaise direct with the vis team and that will probably be  more efficient than having me act as the middleman and asking dumb Qs about files etc.
+
+Thank you all!
+
+https://earth.google.com/web/@-43.4600728,170.18737115,824.58513838a,8436.96750471d,35y,0h,45t,0r/data=ChEaDwoJL20vMDN2ODNqGAIgASgC
+
+https://www.cambridge.org/core/journals/journal-of-glaciology/article/updated-inventory-of-glacier-ice-in-new-zealand-based-on-2016-satellite-imagery/1773F4C5FA624056D3005E68588E99C6
+
+<PolyStyle>
+	<color>7f0000ff</color>
+	<colorMode>normal</colorMode>
+	<fill>1</fill>
+	<outline>1</outline>
+</PolyStyle>
+
+<PolyStyle><color>ff110acc</color><colorMode>normal</colorMode><fill>1</fill></PolyStyle>
+
+
+PolyStyle><fill>1</fill>
+
+
+<PolyStyle><fill>1</fill></PolyStyle>
+
+
+hex blue: 00568d
+
+kml blue ff8d5600
+
+hex red
+
+kml red ff110acc
+
+-----------------------------------------------------
+
+Elevation Data from Cloud-Optimized GeoTIFFs
+Part 1: Shaded-Relief Techniques
+
+https://gwlucastrig.github.io/gridfour/notes/ElevationGeoTiff1.html
+
+--
+
+DEM Tiles
+
+https://drive.google.com/drive/u/0/folders/17dnXkQKlF_fcqqETrHco5cVfF3R7kty0
+
+
+https://javascript.plainenglish.io/webgl-frameworks-three-js-vs-babylon-js-36975d915694
+
+http://www.smartjava.org/topics/posts/
+
+http://www.smartjava.org/content/all-learning-three-js-third-edition-examples-online/
+
+https://medium.com/coderbunker/hello-3d-world-bf3b79d9f89e
+
+https://www.youtube.com/watch?v=cp-H_6VODko
+
+https://apps.nationalmap.gov/downloader/#/
+
+https://www.youtube.com/watch?v=Bb0HnaYNUx4&t=14s
+
+Download Free Elevation Data (DEM) from the USGS National Map and NRCS Geospatial Data Gateway
+
+-----------------------------------------------------
+
+procedural-gl.js
+
+
+https://github.com/felixpalmer/procedural-gl-js
+
+-----------------------------------------------------
+
+New zealand tiles
+
+srtm_70_21.zip
+srtm_71_21.zip
+srtm_70_22.zip
+srtm_71_22.zip
+
+3d-map-generator.com
+
+=================
+
+// https://github.com/jonathanlurie/ThreejsDEM
+
+// https://github.com/jonathanlurie/DTM2MESH
+
+and
+
+https://blog.mastermaps.com/2013/10/terrain-building-with-threejs.html
+
+https://github.com/turban/webgl-terrain
+
+https://stackoverflow.com/questions/33682623/updating-terrain-geometry-with-three-js
+
+https://github.com/czero69/ImageSplitter
+
+=================
+
+// https://thomasthoren.com/2016/02/28/making-a-new-york-times-map.html
+
+//const threeScrolly = document.querySelector(`#three-scrolly`);
+
+//threeScrolly.innerHTML = scroll_template_2
+
+// https://eyes.nasa.gov/apps/mars2020/#/home?id=backshell_separation
+
+// https://threejs.org/
+
+// https://github.com/felixpalmer/procedural-gl-js
+
+// https://www.pheelicks.com/posts/build-new-zealand-in-an-afternoon/
+
+// https://xycarto.github.io/3D_Aotearoa/
+
+// https://github.com/jonathanlurie/ThreejsDEM
+
+// https://source.opennews.org/articles/resurrecting-dragon/
+
+// https://graphics.latimes.com/mars-gale-crater-how-we-did-it/
+
+// https://driven-by-data.net/
+
+// https://threejsfundamentals.org/threejs/lessons/threejs-load-obj.html
+
+// http://www.smartjava.org/content/threejs-render-real-world-terrain-heightmap-using-open-data/
+
+// https://www.nationalgeographic.com/science/graphics/exploring-mars-map-panorama-pictures

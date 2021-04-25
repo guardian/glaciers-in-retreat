@@ -6,6 +6,7 @@ import more from "shared/render/more.html!text"
 import image from "shared/render/image.html!text"
 import header from "shared/render/header.html!text"
 import graphic from "shared/render/graphic.html!text"
+import scrollie from "shared/render/scrollie.html!text"
 import social from "shared/render/social.html!text"
 import bylines from "shared/render/bylines.html!text"
 import footer from "shared/render/footer.html!text"
@@ -31,7 +32,7 @@ async function parser(json) {
 
   return new Promise(function(resolve, reject) {
 
-    let html = `<div class="interactive-wrapper">`
+    let html = `<div class="glacier-interactive-wrapper">`
 
     for (const [key, value] of Object.entries(json)) {
 
@@ -76,6 +77,20 @@ async function parser(json) {
         }
 
         html += mustache.render(graphic, obj)
+
+      }
+
+      if (target==='scrollie') {
+
+        var obj = {}
+
+        for (const k of value) {
+
+          obj[k.type] = k.value
+
+        }
+
+        html += mustache.render(scrollie, obj)
 
       }
 

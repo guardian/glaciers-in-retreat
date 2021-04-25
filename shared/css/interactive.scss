@@ -1,0 +1,276 @@
+@import "mq";
+@import "palette";
+
+/*
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+figure.element {
+    margin-top: 0px;
+}
+
+.element-atom,
+.interactive-atom {
+    width: 100%;
+    margin: 0 !important;
+    padding-bottom: 6px !important;
+}
+
+*/
+
+.glacier-interactive-wrapper {
+    width: 100%;
+	background-color: $background;
+	color: $text;
+	font-family: "Guardian Text Egyptian Web",Georgia,serif;
+	line-height: 1.5;
+    position: relative;
+
+	h1, h2, h3, h4 {
+		color: $primary;
+        line-height: 1.1em;
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+	}
+
+	.content__main {
+		box-sizing: border-box;
+		position: relative;
+		margin-left: 0px;
+		border-top: 1px solid $text;
+		border-bottom: 1px solid $text;
+	}
+	.content__main:before {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		content: ' ';
+		
+	    @include mq($from: leftCol) {
+	    	border-left: 1px solid $text;
+	    }
+
+	}
+	@media (min-width:71.25em) {
+		.content__main:before {
+			left: calc((100% - 1140px)/ 2 + 120px);
+		}
+	}
+	@media (min-width:81.25em) {
+		.content__main:before {
+			left: calc((100% - 1300px)/ 2 + 200px);
+		}
+	}
+
+	.gs-container {
+		box-sizing: border-box;
+		padding-top: 20px;
+
+	    @include mq($until: tablet) {
+	    	padding: 20px;
+	    }
+
+	}
+
+    .content__main-column {
+        max-width: 620px;
+        box-sizing: border-box;
+        
+        position: relative;
+
+        @include mq($from: desktop, $until: wide) {
+            padding: 20px;
+        }
+
+        @include mq($from: wide) {
+            margin-left: 14.375rem;
+        }
+
+    }
+
+	.int-byline {
+		font-size: 16px;
+		line-height: 20px;
+		font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: 400;
+		color: $text;
+		max-width: 620px;
+		display: block;
+		width: 100%;
+		clear: both;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		border-top: 1px dotted gray;
+		padding-top: 5px;
+
+		a, .u-fauxlink {
+		    color: $primary;
+		    cursor: pointer;
+		    text-decoration: none;
+		}
+
+
+	}
+
+    .component-button {
+        background-color: $primary;
+        color: white;
+        margin-right: 40px;
+        margin-top: 5px;
+        cursor: pointer;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 15px;
+        padding-right: 10px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+
+        .icon {
+        	margin-top: 5px;
+        	float: right;
+        	margin-left: 5px;
+        }
+    }
+
+    .gu-image {
+    	width: 100%;
+    	height: auto;
+    }
+
+    .inline_graphic {
+        width: 100%;
+        display: inline-block;
+        background-color: black;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }
+
+    .inline_graphic_title {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        
+        h3 {
+            color: white;
+        }
+    }
+
+	.element-image figcaption {
+	    font-size: .75em;
+	    line-height: 1em;
+	    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	    color: $text;
+	    padding-top: .5em;
+	    line-height: 1.5;
+	}
+
+	.full-width-container {
+		width: 100%;
+
+        /*
+		min-height: 100vh;
+		display: block;
+		background-color: $primary;
+
+		.graphic_title_block {
+			width: 100%;
+			color: white;
+			box-sizing: border-box;
+			border-bottom: 1px solid white;
+
+			h2 {
+				color: white;
+				padding: 20px;
+
+			}
+		}
+
+		.graphic_container {
+			display: inline-block;
+			width: 100%;
+		}
+
+        */
+	}
+
+
+    .special-export-container {
+        width: 100%;
+        display: inline-block;
+        background-color: $primary;
+
+        .graphic_title_block {
+            width: 100%;
+            color: white;
+            box-sizing: border-box;
+            border-bottom: 1px solid white;
+
+            h2 {
+                color: white;
+                padding: 20px;
+
+            }
+        }
+
+        .graphic_container {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+
+
+}
+
+
+.svg .caption:before, .svg figcaption:before {
+    background-image: none;
+}
+
+
+figcaption {
+    display: block;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+::-moz-selection {
+    background: #ffe500;
+    color: #121212;
+}
+::selection {
+    background: #ffe500;
+    color: #121212;
+}
+
+.inline-icon {
+    fill: #ffffff;
+}
+.inline-icon svg {
+    overflow: visible;
+}
+.content--pillar-news:not(.paid-content) .inline-triangle {
+    fill: #c70000;
+}
+
+.android,
+.ios {
+
+    .interactive-wrapper {
+
+        .content__main:before {
+            
+            @include mq($from: leftCol) {
+                border-left: none;
+            }
+
+        }
+
+    }
+
+}

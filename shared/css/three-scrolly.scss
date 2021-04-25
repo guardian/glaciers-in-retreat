@@ -1,0 +1,107 @@
+@import "mq";
+@import "palette";
+
+#scrolly-2 {
+
+	width: 100%;
+
+    #three-scrolly-artboard {
+	    width: 100%;
+	    display: inline-block;
+
+        @include mq($until: tablet) {
+            height: 50vh;
+        }
+
+        @include mq($from: tablet) {
+            height: 100vh;
+        }
+    }
+
+    .scroll-inner {
+    	z-index: 2;
+    }
+
+    .scroll-text {
+
+    	z-index: 1;
+
+        @include mq($until: tablet) {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .scroll-text__div {
+
+	        @include mq($until: tablet) {
+	            width: calc(100% - 20px);
+	        }
+
+	        @include mq($from: tablet) {
+
+	        }
+
+        }
+
+    }
+
+	.trigger {
+
+        @include mq($until: tablet) {
+            width: calc(100% - 40px);
+            box-sizing: border-box;
+        }
+
+        @include mq($from: tablet) {
+            visibility: hidden;
+        }
+
+	}
+
+	#three-infobox {
+
+        @include mq($until: tablet) {
+            display: none;
+        }
+
+        @include mq($from: tablet) {
+			position: absolute;
+			box-sizing: border-box;
+			top: 40px;
+			left: 40px;
+			min-height: 150px;
+			width: 300px;
+			background-color: rgba(250, 250, 250, 0.9);
+			z-index: 101;
+			padding: 10px;
+			-webkit-box-shadow: 5px 5px 15px 5px darkgrey; 
+			box-shadow: 5px 5px 15px 5px darkgrey;
+			font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			color: darkgrey;
+			font-size: 14px;
+			line-height: 17px;
+        }
+	}
+
+    #overlay {
+
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        background-color: rgba(250, 250, 250, 0);
+
+        @include mq($until: tablet) {
+            height: 50vh;
+        }
+
+        @include mq($from: tablet) {
+            height: 100vh;
+            
+        }
+
+    }
+
+}
+
