@@ -80,6 +80,20 @@ async function parser(json) {
 
       }
 
+      if (target==='image') {
+
+        var obj = {}
+
+        for (const k of value) {
+
+          obj[k.type] = k.value
+
+        }
+
+        html += mustache.render(image, obj)
+
+      }
+
       if (target==='scrollie') {
 
         var obj = {}

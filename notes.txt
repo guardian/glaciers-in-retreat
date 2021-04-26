@@ -143,3 +143,5 @@ https://github.com/czero69/ImageSplitter
 // http://www.smartjava.org/content/threejs-render-real-world-terrain-heightmap-using-open-data/
 
 // https://www.nationalgeographic.com/science/graphics/exploring-mars-map-panorama-pictures
+
+// https://www.nytimes.com/interactive/2021/01/14/climate/hottest-year-2020-global-map.html

@@ -1,0 +1,572 @@
+@import "fonts";
+@import "mq";
+
+.element-image figcaption {
+    box-sizing: border-box;
+    font-size: .75em;
+    line-height: 1em;
+    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    color: $text;
+    line-height: 1.5;
+}
+
+.element-image__caption {
+    color: darkgrey;
+}
+
+.element-image__credit {
+    color: black
+}
+
+figure.element--full {
+    width: 100%;
+
+    figcaption {
+        padding: 10px;
+    }
+}
+
+figure.element--inline {
+
+    @include mq($until: mobileLandscape) {
+        width: 100%;
+    }
+
+    @include mq($from: mobileLandscape) {
+        width: 50%;
+        float: right;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        word-wrap: break-word;
+    }
+
+}
+
+.image_cd4971ee6d292652c6d70d824f6999c76837547d {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/cd4971ee6d292652c6d70d824f6999c76837547d.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/cd4971ee6d292652c6d70d824f6999c76837547d.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/cd4971ee6d292652c6d70d824f6999c76837547d.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/cd4971ee6d292652c6d70d824f6999c76837547d.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/cd4971ee6d292652c6d70d824f6999c76837547d.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/cd4971ee6d292652c6d70d824f6999c76837547d.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_3b2a87d6df9cb7f312fec92845ec0a163301247c {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/3b2a87d6df9cb7f312fec92845ec0a163301247c.jpg');
+        padding-bottom: 155%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/3b2a87d6df9cb7f312fec92845ec0a163301247c.jpg');
+        padding-bottom: 155%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/3b2a87d6df9cb7f312fec92845ec0a163301247c.jpg');
+        padding-bottom: 155%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/3b2a87d6df9cb7f312fec92845ec0a163301247c.jpg');
+        padding-bottom: 155%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/3b2a87d6df9cb7f312fec92845ec0a163301247c.jpg');
+        padding-bottom: 155%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/3b2a87d6df9cb7f312fec92845ec0a163301247c.jpg');
+        padding-bottom: 155%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_9fc1c2f8d603469ae6fef9dd3e3c108d35c43be0 {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/9fc1c2f8d603469ae6fef9dd3e3c108d35c43be0.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/9fc1c2f8d603469ae6fef9dd3e3c108d35c43be0.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/9fc1c2f8d603469ae6fef9dd3e3c108d35c43be0.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/9fc1c2f8d603469ae6fef9dd3e3c108d35c43be0.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/9fc1c2f8d603469ae6fef9dd3e3c108d35c43be0.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/9fc1c2f8d603469ae6fef9dd3e3c108d35c43be0.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_82d3484d59e71c337076b53cdbf798158479005e {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/82d3484d59e71c337076b53cdbf798158479005e.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/82d3484d59e71c337076b53cdbf798158479005e.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/82d3484d59e71c337076b53cdbf798158479005e.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/82d3484d59e71c337076b53cdbf798158479005e.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/82d3484d59e71c337076b53cdbf798158479005e.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/82d3484d59e71c337076b53cdbf798158479005e.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_869f5ac628e037d192d33339f1bbc5a53cccabbb {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/869f5ac628e037d192d33339f1bbc5a53cccabbb.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/869f5ac628e037d192d33339f1bbc5a53cccabbb.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/869f5ac628e037d192d33339f1bbc5a53cccabbb.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/869f5ac628e037d192d33339f1bbc5a53cccabbb.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/869f5ac628e037d192d33339f1bbc5a53cccabbb.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/869f5ac628e037d192d33339f1bbc5a53cccabbb.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_757049d3df33af0db705806f32623240407f6e59 {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/757049d3df33af0db705806f32623240407f6e59.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/757049d3df33af0db705806f32623240407f6e59.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/757049d3df33af0db705806f32623240407f6e59.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/757049d3df33af0db705806f32623240407f6e59.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/757049d3df33af0db705806f32623240407f6e59.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/757049d3df33af0db705806f32623240407f6e59.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_966925f4cfabf54500ecfede85a53e50eccb392e {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/966925f4cfabf54500ecfede85a53e50eccb392e.jpg');
+        padding-bottom: 80%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/966925f4cfabf54500ecfede85a53e50eccb392e.jpg');
+        padding-bottom: 80%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/966925f4cfabf54500ecfede85a53e50eccb392e.jpg');
+        padding-bottom: 80%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/966925f4cfabf54500ecfede85a53e50eccb392e.jpg');
+        padding-bottom: 80%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/966925f4cfabf54500ecfede85a53e50eccb392e.jpg');
+        padding-bottom: 80%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/966925f4cfabf54500ecfede85a53e50eccb392e.jpg');
+        padding-bottom: 80%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_c2e1ad676c8febbc027cf1a3ca633f67f359f8f1 {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/c2e1ad676c8febbc027cf1a3ca633f67f359f8f1.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/c2e1ad676c8febbc027cf1a3ca633f67f359f8f1.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/c2e1ad676c8febbc027cf1a3ca633f67f359f8f1.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/c2e1ad676c8febbc027cf1a3ca633f67f359f8f1.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/c2e1ad676c8febbc027cf1a3ca633f67f359f8f1.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/c2e1ad676c8febbc027cf1a3ca633f67f359f8f1.jpg');
+        padding-bottom: 66%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_e4d3d28179278f69eff61d342caa606e329e3195 {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/e4d3d28179278f69eff61d342caa606e329e3195.jpg');
+        padding-bottom: 70%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/e4d3d28179278f69eff61d342caa606e329e3195.jpg');
+        padding-bottom: 70%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/e4d3d28179278f69eff61d342caa606e329e3195.jpg');
+        padding-bottom: 70%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/e4d3d28179278f69eff61d342caa606e329e3195.jpg');
+        padding-bottom: 70%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/e4d3d28179278f69eff61d342caa606e329e3195.jpg');
+        padding-bottom: 70%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/e4d3d28179278f69eff61d342caa606e329e3195.jpg');
+        padding-bottom: 70%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_d33b8bdcd9035b083ce7c644514e66c65443d509 {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/d33b8bdcd9035b083ce7c644514e66c65443d509.jpg');
+        padding-bottom: 110%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/d33b8bdcd9035b083ce7c644514e66c65443d509.jpg');
+        padding-bottom: 110%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/d33b8bdcd9035b083ce7c644514e66c65443d509.jpg');
+        padding-bottom: 110%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/d33b8bdcd9035b083ce7c644514e66c65443d509.jpg');
+        padding-bottom: 110%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/d33b8bdcd9035b083ce7c644514e66c65443d509.jpg');
+        padding-bottom: 110%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/d33b8bdcd9035b083ce7c644514e66c65443d509.jpg');
+        padding-bottom: 110%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_c5521ec826c94a98bba42dfad187cdf8f1bfbfdd {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/c5521ec826c94a98bba42dfad187cdf8f1bfbfdd.jpg');
+        padding-bottom: 43%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/c5521ec826c94a98bba42dfad187cdf8f1bfbfdd.jpg');
+        padding-bottom: 43%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/c5521ec826c94a98bba42dfad187cdf8f1bfbfdd.jpg');
+        padding-bottom: 43%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/c5521ec826c94a98bba42dfad187cdf8f1bfbfdd.jpg');
+        padding-bottom: 43%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/c5521ec826c94a98bba42dfad187cdf8f1bfbfdd.jpg');
+        padding-bottom: 43%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/c5521ec826c94a98bba42dfad187cdf8f1bfbfdd.jpg');
+        padding-bottom: 43%;
+        background-size: 100% auto;
+    }
+
+}
+
+.image_3282530c68c1f8c3686454b18e48c036ff28157e {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/3282530c68c1f8c3686454b18e48c036ff28157e.jpg');
+        padding-bottom: 130%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/3282530c68c1f8c3686454b18e48c036ff28157e.jpg');
+        padding-bottom: 130%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/3282530c68c1f8c3686454b18e48c036ff28157e.jpg');
+        padding-bottom: 130%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/3282530c68c1f8c3686454b18e48c036ff28157e.jpg');
+        padding-bottom: 130%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/3282530c68c1f8c3686454b18e48c036ff28157e.jpg');
+        padding-bottom: 130%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/3282530c68c1f8c3686454b18e48c036ff28157e.jpg');
+        padding-bottom: 130%;
+        background-size: 100% auto;
+    }
+
+}

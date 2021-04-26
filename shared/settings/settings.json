@@ -13,5 +13,27 @@
 
         "message": ""
 
-    }
+    },
+
+	"video": {
+
+		"vid": "0",
+
+		"src": "DRONE_LOOP",
+
+		"subs": "",
+
+		"loop": "FALSE",
+
+		"controls": "FALSE",
+
+		"autoplay": "FALSE",
+
+		"hasAudio": "FALSE",
+
+		"overlay": "",
+
+		"loaded" : false
+	}
+
 }

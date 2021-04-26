@@ -1,6 +1,7 @@
 import { numberWithCommas, $, $$, getDimensions } from 'shared/js/util.js'
 import scroll_template_1 from "shared/templates/video-scrolly.html"
 import ScrollyTeller from "shared/js/scrollyteller"
+import { Player } from 'shared/js/player'
 
 var locations = [{
 	"name" : "Fox Glacier",
@@ -52,7 +53,7 @@ var locations = [{
 	}
 }]
 
-export default function Video() {
+export default function Video(settings) {
 
 	const height = window.innerHeight;
 
@@ -72,62 +73,78 @@ export default function Video() {
 		smallBoxHeight: 10
 	});
 
+	let interval = null
+
 	const triggers = document.querySelector("#scrolly-1").querySelectorAll(".scroll-text__inner")
 
-	var elementTop = window.pageYOffset + videoScrolly.getBoundingClientRect().top
+	const elementTop = window.pageYOffset + videoScrolly.getBoundingClientRect().top
 
-	var elementBottom = window.pageYOffset + videoScrolly.getBoundingClientRect().bottom
+	const elementBottom = window.pageYOffset + videoScrolly.getBoundingClientRect().bottom
 
-	var distance = elementBottom - elementTop
+	const distance = elementBottom - elementTop
 
-	var video_duration = 26
+	const video_duration = 26
 
-	var pixels_per_second = distance / video_duration
+	const pixels_per_second = distance / video_duration
 
-	var memory = 0
+	let memory = 0
 
-	var video = document.querySelector("#media-element")
+	new Player(settings)
 
-	video.load();
+    const video = document.querySelector(`#media-element`);
 
-	var renderLoop = function() {
+    interval = setInterval(function() {
 
-	  requestAnimationFrame( function() {
+        currentState(video).then( (data) => {
 
-	  	if (window.pageYOffset > (elementTop - window.innerHeight) && window.pageYOffset < ( elementBottom - window.innerHeight) ) {
-	  		
-	  		let position = window.pageYOffset - ( elementTop - window.innerHeight )
+        	console.log(data)
 
-	  		var playHead = parseFloat((position / pixels_per_second).toFixed(1))
+            manageState(data)
 
-	  		//console.log(playHead)
+        })
 
-	  		if (memory!=playHead) {
+    }, 1000);
 
-	  			video.currentTime = playHead
+    function init() {
 
-	  			memory = playHead
+		var renderLoop = function() {
 
-	  		}
+		  requestAnimationFrame( function() {
 
-	  		//video.currentTime = parseFloat((position / pixels_per_second).toFixed(1));
-	  	}
+		  	if (window.pageYOffset > (elementTop - window.innerHeight) && window.pageYOffset < ( elementBottom - window.innerHeight) ) {
+		  		
+		  		let position = window.pageYOffset - ( elementTop - window.innerHeight )
 
-	    renderLoop();
+		  		var playHead = parseFloat((position / pixels_per_second).toFixed(1))
 
-	  });
+		  		if (memory!=playHead) {
 
-	};
+		  			video.currentTime = playHead
 
-	renderLoop();
+		  			memory = playHead
 
-	triggers.forEach((d, i) => scrolly.addTrigger({ num: i, do: () => {
+		  		}
 
-		relocate(i, locations[i - 1])
+		  		//video.currentTime = parseFloat((position / pixels_per_second).toFixed(1));
+		  	}
 
-	}}))
+		    renderLoop();
 
-	scrolly.watchScroll()
+		  });
+
+		};
+
+		renderLoop();
+
+		triggers.forEach((d, i) => scrolly.addTrigger({ num: i, do: () => {
+
+			relocate(i, locations[i - 1])
+
+		}}))
+
+		scrolly.watchScroll()
+
+    }
 
 	function relocate(id, location) {
 
@@ -136,5 +153,39 @@ export default function Video() {
 		info.innerHTML = location.description
 
 	}
+
+    async function currentState(vid) {
+
+        var state = {
+
+            "readyState" : vid.readyState,
+
+            "currentTime" : vid.currentTime,
+
+            "paused" : vid.paused,
+
+            "duration" : vid.duration
+
+        }
+
+        return await state
+
+    }
+
+    function manageState(data) {
+
+        var self = this
+
+        if (data.readyState >= 1) {
+
+            clearTimeout(interval);
+
+            interval = null
+
+            init()
+
+        }
+
+    }
 
 }
