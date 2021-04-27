@@ -5,13 +5,12 @@ import config from 'shared/settings/settings'
 import preflight from 'shared/js/preflight'
 const settings = preflight(config)
 
+import VideoHeader from "shared/js/videoheader"
 import Video from "shared/js/video"
 import Slider from "shared/js/slider"
 
+new VideoHeader("#header-video", settings.screenWidth);
+
 Video(settings)
+
 Slider(settings)
-
-// https://preview.gutools.co.uk/global/ng-interactive/2021/apr/06/glaciers-in-retreat
-
-
-

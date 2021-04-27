@@ -33,7 +33,38 @@
 
 		"overlay": "",
 
-		"loaded" : false
+		"loaded" : false,
+
+		"squared" : true,
+
+		"url" : "https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1"
+	},
+
+	"intro": {
+
+		"vid": "1",
+
+		"src": "intro",
+
+		"subs": "",
+
+		"loop": "FALSE",
+
+		"controls": "FALSE",
+
+		"autoplay": "FALSE",
+
+		"hasAudio": "FALSE",
+
+		"overlay": "",
+
+		"loaded" : false,
+
+		"squared" : false,
+
+		"url" : "https://interactive.guim.co.uk/embed/aus/videos/glaciers/intro"
 	}
+
+
 
 }

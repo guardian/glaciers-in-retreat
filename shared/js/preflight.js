@@ -110,7 +110,7 @@ export default function preflight(settings) {
 
   settings.screenHeight = document.documentElement.clientHeight
 
-  settings.portrait = (settings.screenHeight > settings.screenWidth)  ? true : false ;
+  settings.portrait = (settings.screenHeight < 740)  ? true : false ;
 
   settings.pixelWidth = pixelWidth(settings.screenWidth)
 

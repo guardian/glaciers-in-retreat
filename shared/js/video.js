@@ -94,13 +94,15 @@ export default function Video(settings) {
 
 	const context = (settings.portrait) ? { width : 720, height : 720 } : { width : 1280, height : 720 }
 
-	const dimensions = fitRectIntoBounds(context, { width : vs[0], height : vs[1]})
+	const dimensions = (settings.portrait) ? getSquare({ width : vs[0], height : vs[1]}) : fitRectIntoBounds(context, { width : vs[0], height : vs[1]})
 
 	const ut = { context : context, height : vs[0], width : vs[1], dimensions : dimensions }
 
+	console.log(ut)
+
 	let memory = 0
 
-	new Player(settings)
+	new Player(settings, 'video', `media-element`)
 
     const video = document.querySelector(`#media-element`);
 
@@ -221,6 +223,36 @@ export default function Video(settings) {
             init()
 
         }
+
+    }
+
+    function getSquare(viewport) {
+
+    	var newDimensions = {}
+
+    	if (viewport.height > viewport.width) {
+
+    		newDimensions.height = viewport.height;
+
+			newDimensions.width = viewport.height;
+
+			newDimensions.left =  Math.abs( (newDimensions.height - viewport.width) / 2 ) * -1
+
+			newDimensions.top = 0
+
+    	} else {
+
+    		newDimensions.height = viewport.width;
+
+			newDimensions.width = viewport.width;
+
+			newDimensions.left =  Math.abs( (newDimensions.width - viewport.height) / 2 ) * -1
+
+			newDimensions.top = 0
+
+    	}
+
+    	return newDimensions;
 
     }
 

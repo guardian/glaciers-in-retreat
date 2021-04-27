@@ -10,13 +10,15 @@ Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
 
 export class Player {
 
-	constructor(application) {
+	constructor(application, video, target) {
 
 		var self = this
 
         this.player = application
 
-        this.setUp()
+        this.video = application[video]
+
+        this.setUp(target)
 
         this.html = ""
 
@@ -24,7 +26,7 @@ export class Player {
   
     }
 
-    setUp() {
+    setUp(target) {
 
         var self = this
 
@@ -34,15 +36,15 @@ export class Player {
 
             self.consoler(`Loading: ${self.player.video.src.trim()}`)
 
-            var video = document.getElementById(`media-element`)
+            var video = document.getElementById(target)
 
-            var image = (self.player.portrait) ? `${self.player.video.src.trim()}-squared` : self.player.video.src.trim() ;
+            var image = (self.player.portrait && self.video.squared) ? `${self.video.src.trim()}-squared` : self.video.src.trim() ;
 
-            video.setAttribute('poster', `https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/images/${this.player.videoWidth}/${image}.jpg`);
+            //video.setAttribute('poster', `${self.video.url}/images/${this.player.videoWidth}/${image}.jpg`);
 
             video.setAttribute('crossorigin', 'anonymous');                
 
-            self.setPlayer(video, self.player.video)
+            self.setPlayer(video, self.video)
 
         }
 
@@ -52,21 +54,17 @@ export class Player {
 
         var self = this
 
-        var folder = (self.player.portrait) ? 'squared' : 'standard' ;
+        var folder = (self.player.portrait && self.video.squared) ? 'squared' : 'standard' ;
 
         if (self.player.app.isApp) { // HLS videos fron embed folder of gdn-cdn
 
             self.consoler("Using the app")
 
-            //self.consoler(`Android: ${self.player.app.isAndroid}`)
-
-            //https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/standard/dash/DRONE_LOOP-manifest.mpd
-
             if (self.player.app.isAndroid) {
 
                 self.consoler("Using Android")
 
-                this.initShakaPlayer(video, `https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/${folder}/dash/${manifest.src.trim()}-manifest.mpd`);
+                this.initShakaPlayer(video, `${self.video.url}/${folder}/dash/${manifest.src.trim()}-manifest.mpd`);
 
             } else {
 
@@ -94,7 +92,7 @@ export class Player {
 
                     self.consoler("Using the shaka player")
 
-                    this.initShakaPlayer(video, `https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/${folder}/dash/${manifest.src.trim().trim()}-manifest.mpd`);
+                    this.initShakaPlayer(video, `${self.video.url}/${folder}/dash/${manifest.src.trim().trim()}-manifest.mpd`);
 
                 } else {  
 
@@ -116,9 +114,9 @@ export class Player {
 
         self.consoler("Using HLS video")
 
-        self.consoler(`https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/${folder}/hls/${manifest.src.trim()}/index.m3u8`)
+        self.consoler(`${self.video.url}/${folder}/hls/${manifest.src.trim()}/index.m3u8`)
 
-        video.setAttribute('src', `https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/${folder}/hls/${manifest.src.trim()}/index.m3u8`);
+        video.setAttribute('src', `${self.video.url}/${folder}/hls/${manifest.src.trim()}/index.m3u8`);
 
         video.load();
 
@@ -144,6 +142,8 @@ export class Player {
 
     consoler(log) {
 
+        /*
+
         var info = document.querySelector(`#video-infobox`)
 
         if (info) {
@@ -153,6 +153,8 @@ export class Player {
             //info.innerHTML = this.html
 
         }
+
+        */
 
         console.log(log)
 

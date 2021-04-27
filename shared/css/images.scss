@@ -627,3 +627,47 @@ figure.element--inline {
     }
 
 }
+
+.image_2356c66bf4740c000c153565864d4e0c1b81546d {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/2356c66bf4740c000c153565864d4e0c1b81546d.jpg');
+        padding-bottom: 35%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/2356c66bf4740c000c153565864d4e0c1b81546d.jpg');
+        padding-bottom: 35%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/2356c66bf4740c000c153565864d4e0c1b81546d.jpg');
+        padding-bottom: 35%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/2356c66bf4740c000c153565864d4e0c1b81546d.jpg');
+        padding-bottom: 35%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/2356c66bf4740c000c153565864d4e0c1b81546d.jpg');
+        padding-bottom: 35%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/2356c66bf4740c000c153565864d4e0c1b81546d.jpg');
+        padding-bottom: 35%;
+        background-size: 100% auto;
+    }
+
+}
