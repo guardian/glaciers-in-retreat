@@ -7,6 +7,7 @@ import image from "shared/render/image.html!text"
 import header from "shared/render/header.html!text"
 import graphic from "shared/render/graphic.html!text"
 import scrollie from "shared/render/scrollie.html!text"
+import slider from "shared/render/slider.html!text"
 import social from "shared/render/social.html!text"
 import bylines from "shared/render/bylines.html!text"
 import footer from "shared/render/footer.html!text"
@@ -77,6 +78,20 @@ async function parser(json) {
         }
 
         html += mustache.render(graphic, obj)
+
+      }
+
+      if (target==='slider') {
+
+        var obj = {}
+
+        for (const k of value) {
+
+          obj[k.type] = k.value
+
+        }
+
+        html += mustache.render(slider, obj)
 
       }
 

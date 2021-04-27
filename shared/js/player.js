@@ -18,6 +18,8 @@ export class Player {
 
         this.setUp()
 
+        this.html = ""
+
         //http://v1-6-2.shaka-player-demo.appspot.com/docs/tutorial-player.html
   
     }
@@ -116,7 +118,9 @@ export class Player {
 
         self.consoler("Using HLS video")
 
-        video.setAttribute('src', `https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/${folder}/hls/${manifest.src.trim().trim()}/index.m3u8`);
+        self.consoler(`https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/${folder}/hls/${manifest.src.trim()}/index.m3u8`)
+
+        video.setAttribute('src', `https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/${folder}/hls/${manifest.src.trim()}/index.m3u8`);
 
         video.load();
 
@@ -130,7 +134,7 @@ export class Player {
 
         player.load(manifest).then(function() {
 
-            console.log("Boom")
+            self.consoler("Loaded shaka video")
 
         }).catch(function(error){
 
@@ -141,6 +145,16 @@ export class Player {
     }
 
     consoler(log) {
+
+        var info = document.querySelector(`#video-infobox`)
+
+        if (info) {
+
+            //this.html += `${log}<br/>`
+
+            //info.innerHTML = this.html
+
+        }
 
         console.log(log)
 

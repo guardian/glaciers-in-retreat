@@ -66,6 +66,7 @@
     "procedural-gl": "^1.0.19",
     "raw-loader": "^4.0.2",
     "shaka-player": "^3.0.10",
+    "swiper": "^6.5.8",
     "terser-webpack-plugin": "^4.2.2",
     "three": "^0.128.0",
     "uglifyjs-webpack-plugin": "^2.2.0"

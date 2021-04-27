@@ -10,6 +10,18 @@
     line-height: 1.5;
 }
 
+.android,
+.ios {
+
+    figure.element {
+        padding: 0px!important;
+        margin: 0px!important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
 .element-image__caption {
     color: darkgrey;
 }

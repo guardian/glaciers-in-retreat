@@ -253,16 +253,6 @@ svg:not(:root) {
 .android,
 .ios {
 
-    .interactive-wrapper {
 
-        .content__main:before {
-            
-            @include mq($from: leftCol) {
-                border-left: none;
-            }
-
-        }
-
-    }
 
 }

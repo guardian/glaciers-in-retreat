@@ -10,10 +10,33 @@
 @import "video-scrolly";
 @import "three-scrolly";
 @import "images";
+@import "slider";
 @import "footer";
 
 
 body {
 	width: 100%;
 	max-width: 100%;
+	min-width: 100%;
+}
+
+figure.element {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+html, body {
+    max-width: 100%;
+}
+
+figure.element {
+    margin-top: 0px;
+}
+
+.element-atom,
+.interactive-atom {
+    width: 100%;
+    margin: 0 !important;
+    padding-bottom: 6px !important;
 }
