@@ -9,6 +9,7 @@
     #video-scrolly-artboard {
 	    width: 100%;
 	    display: inline-block;
+	    overflow: hidden;
 
         @include mq($until: tablet) {
             height: 50vh;
@@ -21,6 +22,7 @@
 
     .scroll-inner {
     	z-index: 2;
+    	overflow: hidden;
     }
 
     .scroll-text {
@@ -89,29 +91,20 @@
 		    top: 25%;
 		}
 
+
+
+	}
+
+	#map-overlay {
+		position: absolute;
+		opacity: 0.3;
+		z-index: 50;
 	}
 
 	#video-infobox {
 
         @include mq($until: tablet) {
         	display: none;
-        	/*
-			position: absolute;
-			box-sizing: border-box;
-			top: 40px;
-			left: 40px;
-			min-height: 150px;
-			width: 300px;
-			background-color: rgba(250, 250, 250, 0.9);
-			z-index: 101;
-			padding: 10px;
-			-webkit-box-shadow: 5px 5px 15px 5px darkgrey; 
-			box-shadow: 5px 5px 15px 5px darkgrey;
-			font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-			color: darkgrey;
-			font-size: 14px;
-			line-height: 17px;
-			*/
         }
 
         @include mq($from: tablet) {
@@ -132,6 +125,6 @@
 			line-height: 17px;
         }
 	}
-
 }
+
 

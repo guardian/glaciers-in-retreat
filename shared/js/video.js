@@ -2,6 +2,7 @@ import { numberWithCommas, $, $$, getDimensions } from 'shared/js/util.js'
 import scroll_template_1 from "shared/templates/video-scrolly.html"
 import ScrollyTeller from "shared/js/scrollyteller"
 import { Player } from 'shared/js/player'
+import get from 'shared/js/ajax'
 
 var locations = [{
 	"name" : "Fox Glacier",
@@ -57,11 +58,15 @@ export default function Video(settings) {
 
 	const height = window.innerHeight;
 
+	const width = window.innerWidth;
+
 	const videoScrolly = document.querySelector(`#video-scrolly`);
 
 	videoScrolly.innerHTML = scroll_template_1
 
 	const info = document.querySelector(`#video-infobox`)
+
+	var vs = getDimensions(videoScrolly)
 
 	const scrolly = new ScrollyTeller({
 		parent: document.querySelector("#scrolly-1"),
@@ -87,11 +92,42 @@ export default function Video(settings) {
 
 	const pixels_per_second = distance / video_duration
 
+	const context = (settings.portrait) ? { width : 720, height : 720 } : { width : 1280, height : 720 }
+
+	const dimensions = fitRectIntoBounds(context, { width : vs[0], height : vs[1]})
+
+	const ut = { context : context, height : vs[0], width : vs[1], dimensions : dimensions }
+
 	let memory = 0
 
 	new Player(settings)
 
     const video = document.querySelector(`#media-element`);
+
+    const overlay = document.querySelector(` #map-overlay`)
+
+    overlay.style.width = `${dimensions.width}px`
+    overlay.style.height = `${dimensions.height}px`
+    overlay.style.marginTop = `${dimensions.top}px`
+    overlay.style.marginLeft = `${dimensions.left}px`
+
+    var url = (settings.portrait) ? '<%= path %>/square.svg' : '<%= path %>/map.svg'
+
+    get(url).then((response)=>{
+        
+        var mapSVG=Array.from(
+            new DOMParser()
+              .parseFromString(response,'image/svg+xml')
+              .childNodes
+          ).filter(node=>{
+            let tag=node.tagName
+            if(typeof tag=='undefined') return false
+            return tag.toLowerCase()=='svg'
+          })[0]
+
+          overlay.appendChild(mapSVG);
+
+    })
 
     interval = setInterval(function() {
 
@@ -187,5 +223,35 @@ export default function Video(settings) {
         }
 
     }
+
+	function fitRectIntoBounds(map, viewport) {
+
+		var newDimensions = {}
+
+		if (map.height < viewport.height) {
+
+			newDimensions.height = viewport.height;
+
+			newDimensions.width = map.width * (viewport.height / map.height);
+
+			newDimensions.left =  Math.abs( (newDimensions.width - viewport.width) / 2 ) * -1
+
+			newDimensions.top = 0
+
+		} else {
+
+			newDimensions.width = viewport.width;
+
+			newDimensions.height = map.height * (viewport.width / map.width);
+
+			newDimensions.left =  Math.abs( (newDimensions.height - viewport.height) / 2 ) * -1
+
+			newDimensions.top = 0
+
+		}
+
+		return newDimensions;
+
+	}
 
 }

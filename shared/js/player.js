@@ -54,8 +54,6 @@ export class Player {
 
         var folder = (self.player.portrait) ? 'squared' : 'standard' ;
 
-        console.log(`https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1/${folder}/hls/${manifest.src.trim()}/index.m3u8`)
-
         if (self.player.app.isApp) { // HLS videos fron embed folder of gdn-cdn
 
             self.consoler("Using the app")
