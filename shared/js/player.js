@@ -154,7 +154,7 @@ export class Player {
 
         }
 
-        console.log(log)
+        //console.log(log)
 
     }
 

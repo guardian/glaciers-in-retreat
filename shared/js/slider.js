@@ -35,8 +35,6 @@ export default function Slider() {
 	});
 
 	var isAndroidApp = (window.location.origin === "file://" || window.location.origin === null || window.location.origin === "https://mobile.guardianapis.com" && /(android)/i.test(navigator.userAgent) ) ? true : false ;
-
-	console.log(`Android: ${isAndroidApp}`)
 	 
 	if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
 

@@ -19,9 +19,9 @@ const observer = new IntersectionObserver(entries => {
     })
 })
 
-const timelapses = document.querySelectorAll('.timelapse')   
+const timelapses = document.querySelectorAll('.timelapse')
+ 
 timelapses.forEach(timelaps => {
-    console.log('timelaps out')
     observer.observe(timelaps)
 })
 

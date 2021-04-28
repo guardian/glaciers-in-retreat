@@ -50,8 +50,6 @@ export default function Video(settings) {
 
 	const ut = { context : context, height : vs[0], width : vs[1], dimensions : dimensions }
 
-	//console.log(ut)
-
 	let memory = 0
 
 	new Player(settings, 'video', `media-element`)
@@ -97,8 +95,6 @@ export default function Video(settings) {
 
         currentState(video).then( (data) => {
 
-        	console.log(data)
-
             manageState(data)
 
         })
@@ -142,13 +138,9 @@ export default function Video(settings) {
 
 
 
-		triggers.forEach((d, i) => scrolly.addTrigger({ num: i, do: (direction, el) => {
+		triggers.forEach((d, i) => scrolly.addTrigger({ num: i, do: (direction) => {
 
-			console.log("Trigger: " + i)
-
-			console.log(direction);
-
-			relocate(i, locations[i - 1])
+			relocate(i, locations[i - 1], direction)
 
 		}}))
 
@@ -156,9 +148,7 @@ export default function Video(settings) {
 
     }
 
-	function relocate(id, location) {
-
-		console.log(id, location)
+	function relocate(id, location, direction) {
 
 		currentGlacier = id
 
@@ -170,45 +160,59 @@ export default function Video(settings) {
 
 		})
 
-		if (location.play) {
+		if (direction === "down") {
 
-			endTime = location.finish
+			if (location.play) {
 
-			startTime = location.start
+				endTime = location.finish
 
-			console.log("endTime")
+				startTime = location.start
 
-			console.log(endTime)
+			    currentState(video).then( (status) => {
+
+			    	if (status.paused) {
+
+			    		video.currentTime = location.start
+
+			    		playVideo()
+
+			    	} else {
+
+			    		video.currentTime = location.start
+			    	}
+
+			    })
+				
+				// play the video if something is not already playing
+
+			} else {
+
+				video.currentTime = location.start
+
+				var label = svg.querySelector(`#overlay-${currentGlacier}`);
+		          
+		        label.style.display = "block";
+
+			}
+
+		} else {
 
 		    currentState(video).then( (status) => {
 
-		    	console.log(status)
+		    	if (!status.paused) {
 
-		    	if (status.paused) {
+		    		video.pause()
 
-		    		video.currentTime = location.start
-
-		    		console.log("Play video")
-
-		    		playVideo()
-
-		    	} else {
-
-		    		console.log("Reset")
-
-		    		video.currentTime = location.start
 		    	}
 
+		    	video.currentTime = location.finish
+
+				var label = svg.querySelector(`#overlay-${currentGlacier}`);
+				  
+				label.style.display = "block";
+
+
 		    })
-			
-			// play the video if something is not already playing
-		} else {
-
-			video.currentTime = location.start
-
-			var label = svg.querySelector(`#overlay-${currentGlacier}`);
-	          
-	        label.style.display = "block";
 
 		}
 
@@ -224,8 +228,7 @@ export default function Video(settings) {
 	           var label = svg.querySelector(`#overlay-${currentGlacier}`);
 	           label.style.display = "block";
 	        } else {
-	           /* call checkTime every 1/10th 
-	              second until endTime */
+
 	           setTimeout(checkTime, 100);
 	        }
 	    }
@@ -305,8 +308,6 @@ export default function Video(settings) {
 
 		viewport.ratio = viewport.width / viewport.height
 
-		//console.log(map.ratio, viewport.ratio)
-
 		var newDimensions = {}
 
 		if (map.ratio > viewport.ratio) {
@@ -330,8 +331,6 @@ export default function Video(settings) {
 			newDimensions.top = (newDimensions.height > viewport.height) ? Math.abs( (newDimensions.height - viewport.height) / 2 ) * -1 : (newDimensions.height - viewport.height) / 2
 
 		}
-
-		console.log(newDimensions, viewport)
 
 		return newDimensions;
 
