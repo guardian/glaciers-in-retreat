@@ -89,7 +89,7 @@ export default function Video(settings) {
 
           overlay.appendChild(mapSVG);
 
-          svg = document.querySelector('#mapstar');
+         svg = document.querySelector('#mapstar');
 
     })
 

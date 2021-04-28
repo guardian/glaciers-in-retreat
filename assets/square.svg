@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="mapstar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
-<g id="fox-bg">
-	<image style="overflow:visible;" width="1080" height="1080" xlink:href="map/small/fox.jpg" >
-	</image>
+<g id="overlay-1" class="map-overlay" style="display:none">
+	<rect x="316" y="266" style="fill:none" width="403.1" height="39.9"/>
+	<text transform="matrix(1 0 0 1 314.0192 334.6066)" class="st1"><tspan x="0" y="0" class="map-text">Fox glacier</tspan><tspan x="-63.6" y="31.2" class="map-text"> (Te Moeka o Tuawe )</tspan></text>
+	<rect x="316" y="308.5" style="fill:none" width="385.3" height="39.9"/>
+	<rect x="732.2" y="97.7" style="fill:none" width="653" height="39.9"/>
+	<g>
+		<text transform="matrix(1 0 0 1 622.3582 157.2461)"><tspan x="0" y="0" class="map-text">Frans Josef glacier</tspan><tspan x="-71.5" y="31.2" class="map-text">( Kā Roimata o Hine Hukatere )</tspan></text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 662.39 857.7234)" class="map-text">Tasman glacier</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 297.9592 558.9384)" class="map-text">Balfour glacier</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 346.9452 990.3425)" class="map-text">Hooker glacier</text>
+	</g>
+	<circle style="fill:#ED2024;" cx="533.5" cy="680.1" r="17"/>
+	<g>
+		<text transform="matrix(1 0 0 1 557.5908 689.8832)" class="map-text">Aoraki / Mt Cook</text>
+	</g>
 </g>
-<g id="franz-bg">
-	<image style="overflow:visible;" width="1080" height="1080" xlink:href="map/small/frans.jpg" >
-	</image>
+<g id="overlay-2" class="map-overlay" style="display:none">
+	<g style="display:inline;">
+		<text transform="matrix(1 0 0 1 438.3512 773.9374)" class="map-text">Glacier extent in 1978</text>
+	</g>
 </g>
-<g id="fox">
+<g id="overlay-3" class="map-overlay" style="display:none">
+	<g style="display:inline;">
+		<text transform="matrix(1 0 0 1 438.3512 773.9374)" class="map-text">Glacier extent in 2016</text>
+	</g>
 </g>
-<g id="franz">
+<g id="overlay-4" class="map-overlay" style="display:none">
+	<g style="display:inline;">
+		<text transform="matrix(1 0 0 1 626.3315 959.9954)" class="map-text">Glacier extent in 1978</text>
+	</g>
+</g>
+<g id="overlay-5" class="map-overlay" style="display:none">
+	<g style="display:inline;">
+		<text transform="matrix(1 0 0 1 626.3315 760.2287)" class="map-text">Glacier extent in 2016</text>
+	</g>
 </g>
 </svg>

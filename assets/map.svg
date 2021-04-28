@@ -2,52 +2,52 @@
 <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="mapstar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
-<style type="text/css">
-	.map-circle{fill:#C62026;}
-	.map-rect{fill:none;}
-</style>
-<g id="fox-bg">
-	<image style="overflow:visible;" width="1920" height="1080" xlink:href="map/big/fox.jpg" >
-	</image>
-</g>
-<g id="franz-bg">
-	<image style="overflow:visible;" width="1920" height="1080" xlink:href="map/big/frans.jpg" >
-	</image>
-</g>
-<g id="bird-bg">
-	<image style="overflow:visible;" width="1920" height="1080" xlink:href="map/big/birds.jpg" >
-	</image>
-</g>
 <g id="overlay-1" class="map-overlay" style="display:none">
-	<circle class="map-circle" cx="702.3" cy="297.3" r="20.5"/>
-	<rect x="736" y="266" class="map-rect" width="403.1" height="39.9"/>
-	<text transform="matrix(1 0 0 1 736.0228 291.6022)" class="map-text">Fox glacier</text>
-	<rect x="736" y="308.5" class="map-rect" width="385.3" height="39.9"/>
-	<text transform="matrix(1 0 0 1 736.0228 334.1022)" class="map-text">Te Moeka o Tuawe</text>
-	<circle class="map-circle" cx="1118.5" cy="132.9" r="20.5"/>
-	<rect x="1152.2" y="97.7" class="map-rect" width="653" height="39.9"/>
-	<text transform="matrix(1 0 0 1 1152.179 123.2461)" class="map-text">Frans Josef glacier</text>
-	<rect x="1152.2" y="141.2" class="map-rect" width="640.5" height="39.9"/>
-	<text transform="matrix(1 0 0 1 1152.179 166.747)" class="map-text">Kā Roimata o Hine Hukatere</text>
+	<rect x="736" y="266" style="fill:none" width="403.1" height="39.9"/>
+	<text transform="matrix(1 0 0 1 734.0192 334.6066)" class="st1"><tspan x="0" y="0" class="map-text">Fox glacier</tspan><tspan x="-63.6" y="31.2" class="map-text"> (Te Moeka o Tuawe )</tspan></text>
+	<rect x="736" y="308.5" style="fill:none" width="385.3" height="39.9"/>
+	<rect x="1152.2" y="97.7" style="fill:none" width="653" height="39.9"/>
+	<g>
+		<text transform="matrix(1 0 0 1 1042.3582 157.2461)"><tspan x="0" y="0" class="map-text">Frans Josef glacier</tspan><tspan x="-71.5" y="31.2" class="map-text">( Kā Roimata o Hine Hukatere )</tspan></text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1499.3835 817.7234)" class="map-text">Murchison glacier</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1082.3899 857.7234)" class="map-text">Tasman glacier</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 717.9592 558.9384)" class="map-text">Balfour glacier</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 766.9452 990.3425)" class="map-text">Hooker glacier</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1383.6279 170.0476)" class="map-text">Whymper glacier</text>
+	</g>
+	<circle style="fill:#ED2024;" cx="953.5" cy="680.1" r="17"/>
+	<g>
+		<text transform="matrix(1 0 0 1 977.5908 689.8832)" class="map-text">Aoraki / Mt Cook</text>
+	</g>
 </g>
 <g id="overlay-2" class="map-overlay" style="display:none">
-	<circle class="map-circle" cx="909.2" cy="803.2" r="20.5"/>
-	<rect x="942.9" y="785" class="map-rect" width="653" height="39.9"/>
-	<text transform="matrix(1 0 0 1 942.8815 810.545)" class="map-text">Glacier extent in 1978</text>
+	<g style="display:inline;">
+		<text transform="matrix(1 0 0 1 858.3512 773.9374)" class="map-text">Glacier extent in 1978</text>
+	</g>
 </g>
 <g id="overlay-3" class="map-overlay" style="display:none">
-	<circle class="map-circle" cx="909.2" cy="803.2" r="20.5"/>
-	<rect x="942.9" y="785" class="map-rect" width="653" height="39.9"/>
-	<text transform="matrix(1 0 0 1 942.8815 810.545)" class="map-text">Glacier extent in 2016</text>
+	<g style="display:inline;">
+		<text transform="matrix(1 0 0 1 858.3512 773.9374)" class="map-text">Glacier extent in 2016</text>
+	</g>
 </g>
 <g id="overlay-4" class="map-overlay" style="display:none">
-	<circle class="map-circle" cx="1056" cy="904.4" r="20.5"/>
-	<rect x="1029.7" y="886.1" class="map-rect" width="653" height="39.9"/>
-	<text transform="matrix(1 0 0 1 1089.679 911.6747)" class="map-text">Glacier extent in 1978</text>
+	<g style="display:inline;">
+		<text transform="matrix(1 0 0 1 1046.3315 959.9954)" class="map-text">Glacier extent in 1978</text>
+	</g>
 </g>
 <g id="overlay-5" class="map-overlay" style="display:none">
-	<circle class="map-circle" cx="1056" cy="904.4" r="20.5"/>
-	<rect x="1000" y="826" class="map-rect" width="653" height="39.9"/>
-	<text transform="matrix(1 0 0 1 1089.679 911.6747)" class="map-text">Glacier extent in 2016</text>
+	<g style="display:inline;">
+		<text transform="matrix(1 0 0 1 1019.9698 760.2287)" class="map-text">Glacier extent in 2016</text>
+	</g>
 </g>
 </svg>
