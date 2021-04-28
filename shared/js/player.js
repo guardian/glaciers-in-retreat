@@ -116,7 +116,9 @@ export class Player {
 
         self.consoler(`${self.video.url}/${folder}/hls/${manifest.src.trim()}/index.m3u8`)
 
-        video.setAttribute('src', `${self.video.url}/${folder}/hls/${manifest.src.trim()}/index.m3u8`);
+        //video.setAttribute('src', `${self.video.url}/${folder}/hls/${manifest.src.trim()}/index.m3u8`);
+
+        video.setAttribute('src', `${self.video.url}/${folder}/${manifest.src.trim()}-${self.player.iosWidth}.mp4`);
 
         video.load();
 
@@ -142,8 +144,6 @@ export class Player {
 
     consoler(log) {
 
-        /*
-
         var info = document.querySelector(`#video-infobox`)
 
         if (info) {
@@ -153,8 +153,6 @@ export class Player {
             //info.innerHTML = this.html
 
         }
-
-        */
 
         console.log(log)
 

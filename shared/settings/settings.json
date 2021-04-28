@@ -1,25 +1,25 @@
 {
-    "social": {
+	"social": {
 
-        "title": "",
+		"title": "",
 
-        "url": "",
+		"url": "",
 
-        "fbImg": "",
+		"fbImg": "",
 
-        "twImg": "",
+		"twImg": "",
 
-        "twHash": "",
+		"twHash": "",
 
-        "message": ""
+		"message": ""
 
-    },
+	},
 
 	"video": {
 
 		"vid": "0",
 
-		"src": "OPENING_SHOT",
+		"src": "map",
 
 		"subs": "",
 
@@ -33,11 +33,11 @@
 
 		"overlay": "",
 
-		"loaded" : false,
+		"loaded": false,
 
-		"squared" : true,
+		"squared": true,
 
-		"url" : "https://interactive.guim.co.uk/embed/aus/2020/frontline/dev-1/episode-1"
+		"url": "https://interactive.guim.co.uk/embed/aus/videos/glaciers"
 	},
 
 	"intro": {
@@ -58,13 +58,67 @@
 
 		"overlay": "",
 
-		"loaded" : false,
+		"loaded": false,
 
-		"squared" : false,
+		"squared": false,
 
-		"url" : "https://interactive.guim.co.uk/embed/aus/videos/glaciers/intro"
-	}
+		"url": "https://interactive.guim.co.uk/embed/aus/videos/glaciers/intro"
+	},
 
-
-
+	"locations": [{
+		"name": "Birds eye view",
+		"description": "Here you can see part of the southern alps in New Zealand, surrounding the Fox / Te Moeka o Tuawe and Frans Josef / Kā Roimata o Hine Hukatere glaciers",
+		"target": {
+			"latitude": -43.528725,
+			"longitude": 170.086727,
+			"animationDuration": 0.5
+		},
+		"start" : 0,
+		"finish" : 0,
+		"play" : false
+	}, {
+		"name": "Fox Glacier",
+		"description": "The blue shading shows the extent of the glacier ice in 1978 for Fox glacier / Te Moeka o Tuawe",
+		"target": {
+			"latitude": -43.460896,
+			"longitude": 170.187081,
+			"animationDuration": 0.5
+		},
+		"start" : 0,
+		"finish" : 11,
+		"play" : true
+	}, {
+		"name": "Fox Glacier",
+		"description": "Here, you can see how the glacier has retreated, with the shading now showing the 2016 boundaries",
+		"target": {
+			"latitude": -43.460896,
+			"longitude": 170.187081,
+			"animationDuration": 0.5
+		},
+		"start" : 11,
+		"finish" : 18,
+		"play" : true
+	},{
+		"name": "Franz Josef Glacier",
+		"description": "Again, the blue shading shows the extent of Frans Josef glacier / Kā Roimata o Hine Hukatere in 1978",
+		"target": {
+			"latitude": -43.528725,
+			"longitude": 170.086727,
+			"animationDuration": 0.5
+		},
+		"start" : 18,
+		"finish" : 28,
+		"play" : true
+	}, {
+		"name": "Franz Josef Glacier",
+		"description": "Here you can see the coverage in 2016",
+		"target": {
+			"latitude": -43.528725,
+			"longitude": 170.086727,
+			"animationDuration": 0.5
+		},
+		"start" : 28,
+		"finish" : 34,
+		"play" : true
+	}]
 }

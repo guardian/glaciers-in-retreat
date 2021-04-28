@@ -253,6 +253,8 @@ svg:not(:root) {
 .android,
 .ios {
 
-
+    .content__main:before {
+        border-left: none!important;
+    }
 
 }

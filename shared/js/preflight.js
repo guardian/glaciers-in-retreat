@@ -17,7 +17,17 @@ function videoSize(width) {
     (width < 961) ? 960 :
     (width < 1281) ? 1280 : 1920 ;
 
-  }
+}
+
+function iosSize(width) {
+
+    return (width < 231) ? 230 : 
+    (width < 271) ? 270 : 
+    (width < 361) ? 360 :
+    (width < 541) ? 540 :
+    (width < 721) ? 720 : 1080 ;
+
+}
 
 function ios() {
 
@@ -110,11 +120,13 @@ export default function preflight(settings) {
 
   settings.screenHeight = document.documentElement.clientHeight
 
-  settings.portrait = (settings.screenHeight < 740)  ? true : false ;
+  settings.portrait = (settings.screenWidth < 740)  ? true : false ;
 
   settings.pixelWidth = pixelWidth(settings.screenWidth)
 
   settings.videoWidth = videoSize(settings.screenWidth)
+
+  settings.iosWidth = iosSize(settings.screenWidth)
 
   return settings
 

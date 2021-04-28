@@ -4,61 +4,13 @@ import ScrollyTeller from "shared/js/scrollyteller"
 import { Player } from 'shared/js/player'
 import get from 'shared/js/ajax'
 
-var locations = [{
-	"name" : "Fox Glacier",
-	"description" : "Fox Glacier... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-	"target" : {
-		"latitude" : -43.528725, 
-		"longitude": 170.086727,
-		"animationDuration" : 0.5
-	}
-},{
-	"name" : "Franz Josef Glacier",
-	"description" : "Franz Josef Glacier... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-	"target" : {
-		"latitude" : -43.460896, 
-		"longitude": 170.187081,
-		"animationDuration" : 0.5
-	}
-},{
-	"name" : "Fox Glacier",
-	"description" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-	"target" : {
-		"latitude" : -43.528725, 
-		"longitude": 170.086727,
-		"animationDuration" : 0.5
-	}
-},{
-	"name" : "Fox Glacier",
-	"description" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-	"target" : {
-		"latitude" : -43.528725, 
-		"longitude": 170.086727,
-		"animationDuration" : 0.5
-	}
-},{
-	"name" : "Fox Glacier",
-	"description" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-	"target" : {
-		"latitude" : -43.528725, 
-		"longitude": 170.086727,
-		"animationDuration" : 0.5
-	}
-},{
-	"name" : "Fox Glacier",
-	"description" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-	"target" : {
-		"latitude" : -43.528725, 
-		"longitude": 170.086727,
-		"animationDuration" : 0.5
-	}
-}]
-
 export default function Video(settings) {
 
 	const height = window.innerHeight;
 
 	const width = window.innerWidth;
+
+	const locations = settings.locations
 
 	const videoScrolly = document.querySelector(`#video-scrolly`);
 
@@ -88,23 +40,31 @@ export default function Video(settings) {
 
 	const distance = elementBottom - elementTop
 
-	const video_duration = 26
+	const video_duration = 34
 
 	const pixels_per_second = distance / video_duration
 
-	const context = (settings.portrait) ? { width : 720, height : 720 } : { width : 1280, height : 720 }
+	const context = (settings.portrait) ? { width : 1080, height : 1080 } : { width : 1920, height : 1080 }
 
-	const dimensions = (settings.portrait) ? getSquare({ width : vs[0], height : vs[1]}) : fitRectIntoBounds(context, { width : vs[0], height : vs[1]})
+	const dimensions = (settings.portrait) ? fitSquareIntoBounds({ width : vs[0], height : vs[1]}) : fitRectIntoBounds(context, { width : vs[0], height : vs[1]})
 
 	const ut = { context : context, height : vs[0], width : vs[1], dimensions : dimensions }
 
-	console.log(ut)
+	//console.log(ut)
 
 	let memory = 0
 
 	new Player(settings, 'video', `media-element`)
 
     const video = document.querySelector(`#media-element`);
+
+	var startTime = 0;
+
+	var endTime = 0;
+
+	var currentGlacier = 0
+
+	var svg
 
     const overlay = document.querySelector(` #map-overlay`)
 
@@ -129,6 +89,8 @@ export default function Video(settings) {
 
           overlay.appendChild(mapSVG);
 
+          svg = document.querySelector('#mapstar');
+
     })
 
     interval = setInterval(function() {
@@ -144,6 +106,8 @@ export default function Video(settings) {
     }, 1000);
 
     function init() {
+
+    	/*
 
 		var renderLoop = function() {
 
@@ -174,7 +138,15 @@ export default function Video(settings) {
 
 		renderLoop();
 
-		triggers.forEach((d, i) => scrolly.addTrigger({ num: i, do: () => {
+		*/
+
+
+
+		triggers.forEach((d, i) => scrolly.addTrigger({ num: i, do: (direction, el) => {
+
+			console.log("Trigger: " + i)
+
+			console.log(direction);
 
 			relocate(i, locations[i - 1])
 
@@ -186,10 +158,81 @@ export default function Video(settings) {
 
 	function relocate(id, location) {
 
-		console.log(id)
+		console.log(id, location)
+
+		currentGlacier = id
+
+        var txt = svg.querySelectorAll('.map-overlay');
+
+		txt.forEach((element, i) => {
+
+			element.style.display = "none";
+
+		})
+
+		if (location.play) {
+
+			endTime = location.finish
+
+			startTime = location.start
+
+			console.log("endTime")
+
+			console.log(endTime)
+
+		    currentState(video).then( (status) => {
+
+		    	console.log(status)
+
+		    	if (status.paused) {
+
+		    		video.currentTime = location.start
+
+		    		console.log("Play video")
+
+		    		playVideo()
+
+		    	} else {
+
+		    		console.log("Reset")
+
+		    		video.currentTime = location.start
+		    	}
+
+		    })
+			
+			// play the video if something is not already playing
+		} else {
+
+			video.currentTime = location.start
+
+			var label = svg.querySelector(`#overlay-${currentGlacier}`);
+	          
+	        label.style.display = "block";
+
+		}
 
 		info.innerHTML = location.description
 
+	}
+
+	function playVideo() {
+
+	    function checkTime() {
+	        if (video.currentTime >= endTime) {
+	           video.pause();
+	           var label = svg.querySelector(`#overlay-${currentGlacier}`);
+	           label.style.display = "block";
+	        } else {
+	           /* call checkTime every 1/10th 
+	              second until endTime */
+	           setTimeout(checkTime, 100);
+	        }
+	    }
+
+	    video.currentTime = startTime;
+	    video.play();
+	    checkTime();
 	}
 
     async function currentState(vid) {
@@ -226,7 +269,7 @@ export default function Video(settings) {
 
     }
 
-    function getSquare(viewport) {
+    function fitSquareIntoBounds(viewport) {
 
     	var newDimensions = {}
 
@@ -258,29 +301,37 @@ export default function Video(settings) {
 
 	function fitRectIntoBounds(map, viewport) {
 
+		map.ratio = map.width / map.height
+
+		viewport.ratio = viewport.width / viewport.height
+
+		//console.log(map.ratio, viewport.ratio)
+
 		var newDimensions = {}
 
-		if (map.height < viewport.height) {
+		if (map.ratio > viewport.ratio) {
 
 			newDimensions.height = viewport.height;
 
-			newDimensions.width = map.width * (viewport.height / map.height);
+			newDimensions.width = newDimensions.height / (map.height / map.width);
 
-			newDimensions.left =  Math.abs( (newDimensions.width - viewport.width) / 2 ) * -1
+			newDimensions.left = (newDimensions.width > viewport.width) ? Math.abs( (newDimensions.width - viewport.width) / 2 ) * -1 : (newDimensions.width - viewport.width) / 2
 
-			newDimensions.top = 0
+			newDimensions.top =  0
 
 		} else {
 
 			newDimensions.width = viewport.width;
 
-			newDimensions.height = map.height * (viewport.width / map.width);
+			newDimensions.height = newDimensions.width / (map.width / map.height);
 
-			newDimensions.left =  Math.abs( (newDimensions.height - viewport.height) / 2 ) * -1
+			newDimensions.left = 0
 
-			newDimensions.top = 0
+			newDimensions.top = (newDimensions.height > viewport.height) ? Math.abs( (newDimensions.height - viewport.height) / 2 ) * -1 : (newDimensions.height - viewport.height) / 2
 
 		}
+
+		console.log(newDimensions, viewport)
 
 		return newDimensions;
 

@@ -10,6 +10,7 @@ import scrollie from "shared/render/scrollie.html!text"
 import slider from "shared/render/slider.html!text"
 import social from "shared/render/social.html!text"
 import bylines from "shared/render/bylines.html!text"
+import timelapse from "shared/render/timelapse.html!text"
 import footer from "shared/render/footer.html!text"
 
 var url = `https://interactive.guim.co.uk/docsdata/1FY18tgGcpxW_3zqPqaPr03ZmtiVVUZge8-yicvwmi-k.json?t=${new Date().getTime()}`
@@ -168,6 +169,9 @@ function content(section) {
       break;
        case 'social':
        return mustache.render(social, section)
+      break;
+       case 'timelapse':
+       return mustache.render(timelapse, section)
       break;
        case 'bylines':
        for (var i = 0; i < section.value.length; i++) {

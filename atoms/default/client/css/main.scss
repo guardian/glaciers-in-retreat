@@ -41,6 +41,46 @@ figure.element {
     padding-bottom: 6px !important;
 }
 
+.glacier-interactive-wrapper {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
 a, .u-fauxlink {
     color: $primary;
+}
+
+g#fox-bg {
+    display: none;
+}
+
+g#franz-bg {
+    display: none;
+}
+
+#bird-bg {
+    display: none;
+}
+
+.map-text {
+    font-size: 26px;
+    font-weight: 700;
+    font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+g.map-overlay {
+    display: none;
+}
+
+#timelapse {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: lightgrey;
+
+    video {
+        width: 100%;
+    }
 }

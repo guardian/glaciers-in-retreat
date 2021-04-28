@@ -202,8 +202,8 @@
             line-height: 24px;
             font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Headline Full", Georgia, serif;
             font-weight: 900;
-            color: white;
-            background-color: #c70000;
+            color: black;
+            background-color: #f5be2c;
             display: inline-block;
             padding: 2px 5px 5px;
             transform: translateY(2px);
@@ -228,7 +228,7 @@
     }
 
     .mainCol {
-        max-width: 600px;
+        max-width: 430px;
         display: block;
         padding: 0 10px;
         margin-top: 10px;
@@ -255,12 +255,12 @@
         color: #000;
         font-weight: 300;
         font-style: italic;
-        max-width: 480px!important;
+        max-width: 410px!important;
         opacity: 0.7;
 
         @include mq($from: desktop) {
             font-size: 24px;
-            line-height: 28px;
+            line-height: 32px;
         }
 
     }

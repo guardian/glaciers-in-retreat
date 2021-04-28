@@ -2,38 +2,18 @@ import { supportsSticky } from "./util.js"
 
 class ScrollyTeller {
     constructor(config) {
-        this.isMobile = window.innerWidth < 740; // was 740 980
+        this.isMobile = window.innerWidth < 740;
         this.triggerTop = (!this.isMobile) ? config.triggerTop : config.triggerTopMobile;
         this.scrollInner = config.parent.querySelector(".scroll-inner");
         this.scrollText = config.parent.querySelector(".scroll-text");
         this.scrollWrapper = config.parent.querySelector(".scroll-wrapper");
-        this.scrollGraphic = config.parent.querySelector(".gv-sticky-graphic");
         this.lastScroll = null;
         this.lastI = null;
-        this.lastDirection = null;
         this.triggerPoints = [];
         this.textBoxes = [].slice.apply(this.scrollText.querySelectorAll(".scroll-text__inner"));
-
-        this.started = true;
-
-        this.steps = [].slice.apply(this.scrollText.querySelectorAll(".scroll-text__div"))
-
         this.transparentUntilActive = config.transparentUntilActive;
 
-        //this.scrollWrapper.style.height = this.textBoxes.length * 100 + "vh";
-
-        var diff = this.scrollGraphic.clientHeight - this.scrollInner.clientHeight;
-
-        if (this.isMobile) {
-            this.scrollWrapper.style.height = this.scrollText.clientHeight + "px"; // MY CODE
-
-            if(diff > 0) {
-                this.scrollWrapper.style.paddingBottom = diff + "px"; // MY CODE
-            }
-        } else {
-            this.scrollWrapper.style.height = this.textBoxes.length * 100 + "vh";
-        }
-
+        this.scrollWrapper.style.height = this.textBoxes.length * 100 + "vh";
 
         if(this.transparentUntilActive) {
             config.parent.classList.add("transparent-until-active");
@@ -43,8 +23,6 @@ class ScrollyTeller {
     checkScroll() {
         if(this.lastScroll !== window.pageYOffset) {
             const bbox = this.scrollText.getBoundingClientRect();
-
-            
     
             if(!supportsSticky) {
                 if(bbox.top <= 0 && bbox.bottom >= window.innerHeight) {
@@ -63,42 +41,18 @@ class ScrollyTeller {
             }
     
             if(bbox.top < (window.innerHeight*(this.triggerTop)) && bbox.bottom > window.innerHeight/2) { 
-                //const i = Math.floor(Math.abs(bbox.top - (window.innerHeight*(this.triggerTop)))/bbox.height*this.textBoxes.length);
-
-                this.currentStep = null;
-
-                for (var i = this.steps.length - 1; i >= 0; i--) {
-
-                    const bbox2 = this.steps[i].getBoundingClientRect();
-
-                    if (bbox2.top < window.innerHeight * this.triggerTop) {
-                        this.currentStep = i;
-                        break;
-                    }
-
-                }
-
-                i = this.currentStep;
-
-
-                const direction = this.lastScroll > window.pageYOffset ? 'up' : 'down'
+                const i = Math.floor(Math.abs(bbox.top - (window.innerHeight*(this.triggerTop)))/bbox.height*this.textBoxes.length);
     
                 if(i !== this.lastI) {
-                    this.lastI = i;
-                    this.lastDirection = direction;
-                    
-                    // const direction = this.lastScroll > window.pageYOffset ? 'up' : 'down'
-
-                    this.doScrollAction(i, direction);
+                    this.lastI = i; 
+                    this.doScrollAction(i);
 
                     if(this.transparentUntilActive) {
                         this.textBoxes.forEach((el, j) => {
                             if(j <= i) {
                                 el.style.opacity = "1";
-                            } else if (!this.isMobile) {
-                                el.style.opacity = "0.25";
                             } else {
-                                el.style.opacity = "1";
+                                el.style.opacity = "0.25";
                             }
                         });
                     }
@@ -111,11 +65,10 @@ class ScrollyTeller {
         window.requestAnimationFrame(this.checkScroll.bind(this));
     }
 
-    doScrollAction(i, direction) {
+    doScrollAction(i) {
         const trigger = this.triggerPoints.find(d => d.num === i+1);
-        if(this.started && trigger) {
-            const step = this.steps[i]
-            trigger.do(direction, step);
+        if(trigger) {
+            trigger.do();
         }
     }
 
@@ -125,10 +78,6 @@ class ScrollyTeller {
 
     addTrigger(t) {
         this.triggerPoints.push(t);
-    }
-
-    start() {
-        this.started = true
     }
 }
 
