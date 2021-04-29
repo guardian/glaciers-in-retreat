@@ -9,6 +9,19 @@ import VideoHeader from "shared/js/videoheader"
 import Video from "shared/js/video"
 import Slider from "shared/js/slider"
 
+import shareable from "shared/js/shareable";
+
+if (!settings.app.isApp) {
+
+const share = new shareable(settings.social, settings.app).precheck()
+
+} else {
+
+document.querySelector(".header-share-container").style.display = "none";
+
+}
+
+
 new VideoHeader("#header-video", settings.screenWidth);
 
 new VideoHeader("#timelapse-video", settings.screenWidth);

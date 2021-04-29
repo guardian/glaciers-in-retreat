@@ -63,5 +63,15 @@ a, .u-fauxlink {
     color: $primary;
 }
 
+.creditbox {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $greyscale;
+    color: white;
+    font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 5px;
+}
 
 

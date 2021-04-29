@@ -18,7 +18,7 @@ export default function Video(settings) {
 
 	const info = document.querySelector(`#video-infobox`)
 
-	var vs = getDimensions(videoScrolly)
+	let vs = getDimensions(videoScrolly)
 
 	const scrolly = new ScrollyTeller({
 		parent: document.querySelector("#scrolly-1"),
@@ -40,6 +40,10 @@ export default function Video(settings) {
 
 	const triggers = document.querySelector("#scrolly-1").querySelectorAll(".scroll-text__inner")
 
+	/*
+
+	// Stuff to link the video playhead to the page scroll. Useful on another project.
+
 	const elementTop = window.pageYOffset + videoScrolly.getBoundingClientRect().top
 
 	const elementBottom = window.pageYOffset + videoScrolly.getBoundingClientRect().bottom
@@ -50,9 +54,11 @@ export default function Video(settings) {
 
 	const pixels_per_second = distance / video_duration
 
+	*/
+
 	const context = (settings.portrait) ? { width : 1080, height : 1080 } : { width : 1920, height : 1080 }
 
-	const dimensions = (settings.portrait) ? fitSquareIntoBounds({ width : vs[0], height : vs[1]}) : fitRectIntoBounds(context, { width : vs[0], height : vs[1]})
+	let dimensions = (settings.portrait) ? fitSquareIntoBounds({ width : vs[0], height : vs[1]}) : fitRectIntoBounds(context, { width : vs[0], height : vs[1]})
 
 	const ut = { context : context, height : vs[0], width : vs[1], dimensions : dimensions }
 
@@ -62,20 +68,20 @@ export default function Video(settings) {
 
     const video = document.querySelector(`#media-element`);
 
-	var startTime = 0;
+	let startTime = 0;
 
-	var endTime = 0;
+	let endTime = 0;
 
-	var currentGlacier = 0
+	let currentGlacier = 0
 
-	var svg
+	let svg
 
     containter.style.width = `${dimensions.width}px`
     containter.style.height = `${dimensions.height}px`
     containter.style.marginTop = `${dimensions.top}px`
     containter.style.marginLeft = `${dimensions.left}px`
 
-    var url = (settings.portrait) ? '<%= path %>/square.svg' : '<%= path %>/map.svg'
+    const url = (settings.portrait) ? '<%= path %>/square.svg' : '<%= path %>/map.svg'
 
     get(url).then((response)=>{
         
@@ -140,8 +146,6 @@ export default function Video(settings) {
 
 		*/
 
-
-
 		triggers.forEach((d, i) => scrolly.addTrigger({ num: i, do: (direction) => {
 
 			relocate(i, locations[i - 1], direction)
@@ -149,6 +153,41 @@ export default function Video(settings) {
 		}}))
 
 		scrolly.watchScroll()
+
+		resizer()
+
+    }
+
+    function resizer() {
+
+        window.addEventListener("resize", function() {
+
+            clearTimeout(document.body.data)
+
+            document.body.data = setTimeout( function() { 
+
+                console.log("Resize")
+
+                vs = getDimensions(document.querySelector(`#video-scrolly-artboard`))
+
+                dimensions = (settings.portrait) ? fitSquareIntoBounds({ width : vs[0], height : vs[1]}) : fitRectIntoBounds(context, { width : vs[0], height : vs[1]})
+
+			    containter.style.width = `${dimensions.width}px`
+			    containter.style.height = `${dimensions.height}px`
+			    containter.style.marginTop = `${dimensions.top}px`
+			    containter.style.marginLeft = `${dimensions.left}px`
+
+            }, 200);
+
+        });
+
+        window.addEventListener("orientationchange", function() {
+            
+            console.log("orientationchange")
+
+            location.reload();
+            
+        }, false);
 
     }
 
@@ -193,9 +232,13 @@ export default function Video(settings) {
 
 				video.currentTime = location.start
 
-				var label = svg.querySelector(`#overlay-${currentGlacier}`);
-		          
-		        label.style.display = "block";
+		    	let label = svg.querySelector(`#overlay-${currentGlacier}`);
+
+		    	if (label) {
+
+					label.style.display = "block";
+
+		    	}
 
 			}
 
@@ -211,10 +254,13 @@ export default function Video(settings) {
 
 		    	video.currentTime = location.finish
 
-				var label = svg.querySelector(`#overlay-${currentGlacier}`);
-				  
-				label.style.display = "block";
+		    	let label = svg.querySelector(`#overlay-${currentGlacier}`);
 
+		    	if (label) {
+
+					label.style.display = "block";
+
+		    	}
 
 		    })
 
@@ -227,19 +273,32 @@ export default function Video(settings) {
 	function playVideo() {
 
 	    function checkTime() {
+
 	        if (video.currentTime >= endTime) {
-	           video.pause();
-	           var label = svg.querySelector(`#overlay-${currentGlacier}`);
-	           label.style.display = "block";
+	           
+	           	video.pause();
+
+		    	let label = svg.querySelector(`#overlay-${currentGlacier}`);
+
+		    	if (label) {
+
+					label.style.display = "block";
+
+		    	}
+
 	        } else {
 
 	           setTimeout(checkTime, 100);
+
 	        }
 	    }
 
 	    video.currentTime = startTime;
+
 	    video.play();
+
 	    checkTime();
+	    
 	}
 
     async function currentState(vid) {
@@ -338,13 +397,9 @@ export default function Video(settings) {
 
 		if (viewport.ratio > map.ratio) {
 
-			console.log( Math.abs( (newDimensions.height - viewport.height) / 2 ) * -1)
-
     		panel.style.marginTop = `${Math.abs( (newDimensions.height - viewport.height) / 2 ) * -1}px`
 
 		}
-
-		console.log(map.ratio, viewport.ratio)
 
 		return newDimensions;
 

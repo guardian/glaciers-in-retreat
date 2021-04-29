@@ -12,7 +12,8 @@
 	    overflow: hidden;
 
         @include mq($until: tablet) {
-            height: 50vh;
+            height: 0px;
+            padding-bottom: 100%;
         }
 
         @include mq($from: tablet) {
@@ -47,7 +48,7 @@
 
 	        @include mq($until: tablet) {
 	            width: calc(100% - 20px);
-	            margin-top: 50vh;
+	            margin-top: calc(100vw + 50px);
 	            z-index: 1;
 	        }
 
