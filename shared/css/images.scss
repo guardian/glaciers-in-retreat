@@ -673,3 +673,47 @@ figure.element--inline {
     }
 
 }
+
+.image_b0044a6b9b75f62172459cd5b2ddd0ac93567bba {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+
+    @include mq($until: mobile) {
+        background-image: url('<%= path %>/320/b0044a6b9b75f62172459cd5b2ddd0ac93567bba.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        background-image: url('<%= path %>/480/b0044a6b9b75f62172459cd5b2ddd0ac93567bba.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        background-image: url('<%= path %>/740/b0044a6b9b75f62172459cd5b2ddd0ac93567bba.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        background-image: url('<%= path %>/980/b0044a6b9b75f62172459cd5b2ddd0ac93567bba.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        background-image: url('<%= path %>/1300/b0044a6b9b75f62172459cd5b2ddd0ac93567bba.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+    @include mq($from: wide) {
+        background-image: url('<%= path %>/2000/b0044a6b9b75f62172459cd5b2ddd0ac93567bba.jpg');
+        padding-bottom: 100%;
+        background-size: 100% auto;
+    }
+
+}
