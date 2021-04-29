@@ -70,10 +70,6 @@ export default function Video(settings) {
 
 	var svg
 
-
-
-    console.log(panel)
-
     containter.style.width = `${dimensions.width}px`
     containter.style.height = `${dimensions.height}px`
     containter.style.marginTop = `${dimensions.top}px`
