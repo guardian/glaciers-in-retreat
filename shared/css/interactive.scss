@@ -236,36 +236,6 @@ figure.element {
 }
 
 
-.svg .caption:before, .svg figcaption:before {
-    background-image: none;
-}
-
-
-figcaption {
-    display: block;
-}
-svg:not(:root) {
-    overflow: hidden;
-}
-::-moz-selection {
-    background: #ffe500;
-    color: #121212;
-}
-::selection {
-    background: #ffe500;
-    color: #121212;
-}
-
-.inline-icon {
-    fill: #ffffff;
-}
-.inline-icon svg {
-    overflow: visible;
-}
-.content--pillar-news:not(.paid-content) .inline-triangle {
-    fill: #c70000;
-}
-
 .android,
 .ios {
 
