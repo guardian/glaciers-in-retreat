@@ -118,6 +118,30 @@
 		left: 0px;
 		top: 0px;
 		z-index: 50;
+
+		g#fox-bg {
+		    display: none;
+		}
+
+		g#franz-bg {
+		    display: none;
+		}
+
+		#bird-bg {
+		    display: none;
+		}
+
+		.map-text {
+		    font-size: 26px;
+		    font-weight: 400;
+		    font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		    fill: black;
+		}
+
+		g.map-overlay {
+		    display: none;
+		}
+		
 	}
 
 	#video-infobox {
