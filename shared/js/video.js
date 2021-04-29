@@ -30,6 +30,12 @@ export default function Video(settings) {
 		smallBoxHeight: 10
 	});
 
+	const containter = document.querySelector(`#map-container`)
+
+    const overlay = document.querySelector(` #map-overlay`)
+
+    const panel = document.querySelector(`#panel`)
+
 	let interval = null
 
 	const triggers = document.querySelector("#scrolly-1").querySelectorAll(".scroll-text__inner")
@@ -64,12 +70,14 @@ export default function Video(settings) {
 
 	var svg
 
-    const overlay = document.querySelector(` #map-overlay`)
 
-    overlay.style.width = `${dimensions.width}px`
-    overlay.style.height = `${dimensions.height}px`
-    overlay.style.marginTop = `${dimensions.top}px`
-    overlay.style.marginLeft = `${dimensions.left}px`
+
+    console.log(panel)
+
+    containter.style.width = `${dimensions.width}px`
+    containter.style.height = `${dimensions.height}px`
+    containter.style.marginTop = `${dimensions.top}px`
+    containter.style.marginLeft = `${dimensions.left}px`
 
     var url = (settings.portrait) ? '<%= path %>/square.svg' : '<%= path %>/map.svg'
 
@@ -331,6 +339,16 @@ export default function Video(settings) {
 			newDimensions.top = (newDimensions.height > viewport.height) ? Math.abs( (newDimensions.height - viewport.height) / 2 ) * -1 : (newDimensions.height - viewport.height) / 2
 
 		}
+
+		if (viewport.ratio > map.ratio) {
+
+			console.log( Math.abs( (newDimensions.height - viewport.height) / 2 ) * -1)
+
+    		panel.style.marginTop = `${Math.abs( (newDimensions.height - viewport.height) / 2 ) * -1}px`
+
+		}
+
+		console.log(map.ratio, viewport.ratio)
 
 		return newDimensions;
 
