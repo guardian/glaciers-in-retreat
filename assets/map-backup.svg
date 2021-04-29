@@ -43,12 +43,12 @@
 		<text transform="matrix(1 0 0 1 977.5908 689.8832)" class="map-text" filter="url(#outline)">Aoraki / Mt Cook</text>
 	</g>
 </g>
-<!-- <g id="overlay-2" class="map-overlay" style="display:none">
+<g id="overlay-2" class="map-overlay" style="display:none">
 	<g style="display:inline;">
 		<text transform="matrix(1 0 0 1 858.3512 773.9374)" class="map-text" filter="url(#outline)">Glacier extent in 1978</text>
 	</g>
-</g> -->
-<!-- <g id="overlay-3" class="map-overlay" style="display:none">
+</g>
+<g id="overlay-3" class="map-overlay" style="display:none">
 	<g style="display:inline;">
 		<text transform="matrix(1 0 0 1 858.3512 773.9374)" class="map-text" filter="url(#outline)">Glacier extent in 2016</text>
 	</g>
@@ -62,5 +62,5 @@
 	<g style="display:inline;">
 		<text transform="matrix(1 0 0 1 1019.9698 760.2287)" class="map-text" filter="url(#outline)">Glacier extent in 2016</text>
 	</g>
-</g> -->
+</g>
 </svg>
