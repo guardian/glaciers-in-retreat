@@ -25,7 +25,7 @@ export default function Video(settings) {
 		triggerTop: 0.4, // percentage from the top of the screen that the trigger should fire
 		triggerTopMobile: 0.8,
 		triggerTopTablet: 0.8,
-		transparentUntilActive: false,
+		transparentUntilActive: true,
 		bigBoxHeight: 35,
 		smallBoxHeight: 10
 	});
