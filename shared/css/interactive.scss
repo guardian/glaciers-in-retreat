@@ -66,21 +66,23 @@ figure.element {
 		height: 100%;
 		content: ' ';
 		
-	    @include mq($from: leftCol) {
+	    @include mq($from: wide) {
 	    	border-left: 1px solid $text;
 	    }
 
 	}
-	@media (min-width:71.25em) {
-		.content__main:before {
-			left: calc((100% - 1140px)/ 2 + 120px);
-		}
-	}
-	@media (min-width:81.25em) {
-		.content__main:before {
-			left: calc((100% - 1300px)/ 2 + 200px);
-		}
-	}
+
+    @include mq(leftCol) {
+        .content__main:before {
+            left: calc((100% - 1140px)/ 2 - 20px) ;
+        }
+    }
+    
+    @include mq(wide) {
+        .content__main:before {
+            left: calc((100% - 1240px)/ 2 - 20px);
+        }
+    }
 
 	.gs-container {
 		box-sizing: border-box;
@@ -102,9 +104,14 @@ figure.element {
             padding: 20px;
         }
 
-        @include mq($from: wide) {
-            margin-left: 14.375rem;
+        @include mq(leftCol) {
+            left: calc((100% - 1140px)/ 2);
         }
+        
+        @include mq(wide) {
+            left: calc((100% - 1240px)/ 2);
+        }
+
 
     }
 

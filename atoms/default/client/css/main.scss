@@ -1,3 +1,11 @@
+* {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-height: 0;
+}
+
 @import "fonts";
 @import "mq";
 @import "palette";
@@ -48,6 +56,37 @@ figure.element {
 .interactive-atom {
     margin: 0;
     padding: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-family: "Guardian Text Egyptian Web",Georgia,serif;
+    line-height: 150%;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 1.1em;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    color: #00b2ff;
+    font-family: "Guardian Titlepiece", "GH Guardian Headline","Guardian Text Egyptian Web", Georgia,serif;
+}
+
+ul {
+    list-style-position: inside;
+    padding: 0;
+    margin-left: 1.5625rem;
+}
+
+.interactive .footer h2 {
+    
+    margin-bottom: 10px;
 }
 
 .glacier-interactive-wrapper {
